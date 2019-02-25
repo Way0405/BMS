@@ -126,7 +126,7 @@ void vol_measure()
 void amp_measure(){//total current measure
 
    float x,amp;
-   set_adc_channel (1);
+   set_adc_channel (1);//設定read_adc的腳位
    x=read_adc();
    x=x*5/65536;
    amp=(x-2.5)*100;

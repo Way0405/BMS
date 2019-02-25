@@ -27,7 +27,7 @@ void  EXT_isr(void)
 /*protect check*/
 void  EXT1_isr(void) 
 {
-   input(PIN_B1);
+   input(PIN_B1);//保護電路訊號
    printf("warning!!!(abnormal situation)/n/r");
    protect();
 }
@@ -52,3 +52,5 @@ void main()
    }
 
 }
+
+

@@ -10,10 +10,11 @@ void charge(){
    /*----------------------------------*/
    /*charge all*/
    while(1){
-      output_high(PIN_D4);//total switch
+      output_high(protect_pin);//total switch
       output_high(PIN_D0);output_high(PIN_D1);output_high(PIN_D2);output_high(PIN_D3);//muxB:1111
       output_low(PIN_A3);output_low(PIN_A4);output_low(PIN_A5);output_low(PIN_C1);//muxA:0000
-      printf("-----recheck battery situation-----\n\r");vol_measure();//recheck voltage
+      printf("-----recheck battery situation-----\n\r");
+	  vol_measure();//recheck voltage
       delay_ms(1000);
       if(vol1>4.0||vol2>4.0||vol3>4.0||vol4>4.0||vol5>4.0||vol6>4.0||vol7>4.0||vol8>4.0||vol9>4.0||vol10>4.0||vol11>4.0||vol12>4.0||vol13>4.0||vol14>4.0||vol14>4.0||vol15>4.0||vol16>4.0)
          break;
