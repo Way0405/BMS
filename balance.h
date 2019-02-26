@@ -4,10 +4,17 @@
 
 void  balance()
  {
+	int i;
    /*ideal situation*/
-   output_low(protect_pin);
-   output_high(PIN_D0);output_high(PIN_D1);output_high(PIN_D2);output_high(PIN_D3);//muxB:1111
-   output_low(PIN_A3);output_low(PIN_A4);output_low(PIN_A5);output_low(PIN_C1);//muxA:0000
-   
+   output_low(total_switch);
+   for(i=0;i<=4;i++)
+   {
+	output_high(mux_b_sel[i]);//muxB:1111
+	output_low(mux_a_sel[i]);//muxA:0000
+   }
+   /*原版
+   output_high(mux_b_sel[0] );output_high(mux_b_sel[1]);output_high(mux_b_sel[2]);output_high(mux_b_sel[3]);//muxB:1111
+   output_low(mux_a_sel[0]);output_low(mux_a_sel[1]);output_low(mux_a_sel[2]);output_low(mux_a_sel[3]);//muxA:0000
+   */
 
 }

@@ -1,9 +1,7 @@
 #ifndef HEADER_FILE_PROTECT
 #define HEADER_FILE_PROTECT
 
-//腳位宣告
-protect_pin=PIN_D4;
-//
+//偵測到異常後的重新開機保護程式
 void protect()
  {
    float reload;//x秒後重新開機
@@ -15,7 +13,7 @@ void protect()
       
    }
    printf("reset the program...");
-   reset_cpu();
+   reset_cpu();//內建函式，待測試
 }
 
 #endif

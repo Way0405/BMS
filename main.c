@@ -9,14 +9,16 @@ void  EXT_isr(void)
 {
    printf("-----charging loading-----\n\r");
    int load_percent;
-   for(int i=0;i<5;i++){
+   for(int i=0;i<5;i++)
+   {
       delay_ms(500);
       load_percent=(i+1)*20;
       
-      if(input(PIN_B0)){
-         printf("loading......:%d %c",load_percent,'%');
-         if(i==4)
-            charge();
+      if(input(charge_signal))
+	  {
+        printf("loading......:%d %c",load_percent,'%');
+        if(i==4)
+        charge();
       }
       else
          return;
@@ -27,7 +29,7 @@ void  EXT_isr(void)
 /*protect check*/
 void  EXT1_isr(void) 
 {
-   input(PIN_B1);//保護電路訊號
+   input(protect_signal);//保護電路訊號
    printf("warning!!!(abnormal situation)/n/r");
    protect();
 }
